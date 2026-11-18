@@ -24,7 +24,7 @@ jobs:
           GIT_LFS_SKIP_SMUDGE=1 git clone --depth=1 --branch lineage-23.2 --single-branch https://github.com/TheMuppets/proprietary_vendor_google_coral.git source
           cd source
           base="$(git rev-parse HEAD)"
-          git switch --orphan lunaris-16.2
+          git checkout --orphan lunaris-16.2
           git add -A
           printf '%s\n' "TheMuppets/proprietary_vendor_google_coral lineage-23.2 source SHA: $base" > LUNARIS_UPSTREAM.txt
           git add LUNARIS_UPSTREAM.txt
