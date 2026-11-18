@@ -1488,8 +1488,6 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service-qti \
     android.hardware.keymaster@4.0-strongbox-service-qti \
     android.hardware.keymaster@4.1-service-qti \
-    android.hardware.keymaster@4.1-service.citadel \
-    android.hardware.neuralnetworks@1.2-service-noronha \
     android.hardware.neuralnetworks@1.3-service-qti \
     android.hardware.rebootescrow-service.citadel \
     android.hardware.weaver@1.0-service.citadel \
@@ -1497,7 +1495,6 @@ PRODUCT_PACKAGES += \
     citadeld \
     init_citadel \
     qcrild \
-    vendor.google.airbrush@1.0-service \
     vendor.google.radioext@1.0-service \
     vendor.google.wireless_charger@1.3-service-vendor \
     vendor.qti.hardware.qseecom@1.0-service \
