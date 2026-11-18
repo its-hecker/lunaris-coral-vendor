@@ -16192,6 +16192,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "android.hardware.keymaster@4.1-impl.nos",
+    // Supplied for installation by the Floral Face ID plugin. Retain this
+    // stock module for Soong link dependencies without duplicate install rules.
+    installable: false,
     owner: "google",
     strip: {
         none: true,
@@ -18380,6 +18383,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libairbrush-pixel",
+    // Supplied for installation by the Floral Face ID plugin. Retain this
+    // stock module for Soong link dependencies without duplicate install rules.
+    installable: false,
     owner: "google",
     strip: {
         none: true,
@@ -18624,6 +18630,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libface-calibration-proto",
+    // Supplied for installation by the Floral Face ID plugin. Retain this
+    // stock module for Soong link dependencies without duplicate install rules.
+    installable: false,
     owner: "google",
     strip: {
         none: true,
@@ -18650,6 +18659,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libface-enroll-proto",
+    // Supplied for installation by the Floral Face ID plugin. Retain this
+    // stock module for Soong link dependencies without duplicate install rules.
+    installable: false,
     owner: "google",
     strip: {
         none: true,
@@ -18676,6 +18688,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libfaceauth-util",
+    // Supplied for installation by the Floral Face ID plugin. Retain this
+    // stock module for Soong link dependencies without duplicate install rules.
+    installable: false,
     owner: "google",
     strip: {
         none: true,
