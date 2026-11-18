@@ -1264,7 +1264,6 @@ PRODUCT_PACKAGES += \
     android.hardware.authsecret@1.0-impl.nos \
     android.hardware.confirmationui.secure_input_citadel \
     android.hardware.identity@1.0-impl.nos \
-    android.hardware.keymaster@4.1-impl.nos \
     android.hardware.oemlock@1.0-impl.nos \
     android.hardware.weaver@1.0-impl.nos \
     lib_multicam_dualfov_capture_session \
@@ -1335,7 +1334,6 @@ PRODUCT_PACKAGES += \
     lib_goog_metadata_utils \
     lib_profiler \
     lib_sensor_listener \
-    libairbrush-pixel \
     libcertverifier \
     libcom.qti.chinodeutils \
     libdarwinn_client \
@@ -1344,9 +1342,6 @@ PRODUCT_PACKAGES += \
     libdepthgenerator \
     libdysco_camx_wrapper \
     libdysco_core \
-    libface-calibration-proto \
-    libface-enroll-proto \
-    libfaceauth-util \
     libg3a_gabc \
     libg3a_ghawb \
     libgatm_camx_wrapper \
