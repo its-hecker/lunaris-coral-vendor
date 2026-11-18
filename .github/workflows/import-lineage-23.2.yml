@@ -32,5 +32,7 @@ jobs:
           git commit -m "Import LineageOS 23.2 coral proprietary vendor for LunarisOS"
           git remote add target "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git lfs fetch origin lineage-23.2
+          git rm .lfsconfig
+          git commit -m "Use GitHub-hosted LFS for Lunaris vendor mirror"
           git lfs push --all target HEAD
           git push target HEAD:refs/heads/lunaris-16.2
