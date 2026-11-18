@@ -18,6 +18,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          if git ls-remote --heads "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" refs/heads/lunaris-16.2 | grep -q lunaris-16.2; then echo 'Import branch already exists'; exit 0; fi
           git config --global user.name "Hecker"
           git config --global user.email "hecker@users.noreply.github.com"
           git lfs install
@@ -30,6 +31,6 @@ jobs:
           git add LUNARIS_UPSTREAM.txt
           git commit -m "Import LineageOS 23.2 coral proprietary vendor for LunarisOS"
           git remote add target "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git lfs fetch source lineage-23.2
+          git lfs fetch origin lineage-23.2
           git lfs push --all target HEAD
           git push target HEAD:refs/heads/lunaris-16.2
