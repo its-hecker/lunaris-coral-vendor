@@ -1,0 +1,35 @@
+name: Import Android 16 LineageOS source
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/import-lineage-23.2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Import coral proprietary vendor from lineage-23.2
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config --global user.name "Hecker"
+          git config --global user.email "hecker@users.noreply.github.com"
+          git lfs install
+          GIT_LFS_SKIP_SMUDGE=1 git clone --depth=1 --branch lineage-23.2 --single-branch https://github.com/TheMuppets/proprietary_vendor_google_coral.git source
+          cd source
+          base="$(git rev-parse HEAD)"
+          git switch --orphan lunaris-16.2
+          git add -A
+          printf '%s\n' "TheMuppets/proprietary_vendor_google_coral lineage-23.2 source SHA: $base" > LUNARIS_UPSTREAM.txt
+          git add LUNARIS_UPSTREAM.txt
+          git commit -m "Import LineageOS 23.2 coral proprietary vendor for LunarisOS"
+          git remote add target "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git lfs fetch source lineage-23.2
+          git lfs push --all target HEAD
+          git push target HEAD:refs/heads/lunaris-16.2
